@@ -1,5 +1,5 @@
 
 public class PersonagemGame {
 	public int saudeAtual;
-	public String 
+	public String nome;
 }
