@@ -4,7 +4,7 @@ public class Pedido {
 	private ItemPedido[] items;
 	
 	public double calcularTotal() {
-		double total = 0;
+		double total = 0.0;
 		 for (ItemPedido item : items) {
 	            if (item != null) { 
 	                produtos.Produto produto = item.getProduto();
