@@ -7,7 +7,7 @@ public class Dvd extends produtos.Produto {
 	
 	
 	public double obterPrecoLiquido(){
-		return super.precoBruto + ((super.precoBruto * 20) / 100);
+		 return Math.round(precoBruto * 1.20 * 100.0) / 100.0;
 	}
 	
 	public Dvd(String titulo, int ano, String pais, 

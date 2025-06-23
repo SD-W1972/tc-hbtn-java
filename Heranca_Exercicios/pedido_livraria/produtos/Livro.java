@@ -7,7 +7,7 @@ public class Livro extends produtos.Produto {
 	
 	
 	public double obterPrecoLiquido() {
-		return super.precoBruto + ((super.precoBruto * 15 )/100);
+		 return Math.round(precoBruto * 1.15 * 100.0) / 100.0;
 	}
 	
 	public Livro(String titulo, int ano, String pais, 
