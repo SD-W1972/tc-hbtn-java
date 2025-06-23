@@ -14,9 +14,11 @@ public class Pedido {
 	            total += subtotal;
 	        }
 	    }
-	    double desconto = total * (percentualDesconto / 100);
-	    return Math.round((total - desconto) * 100.0) / 100.0;
+	    double desconto = Math.floor(total * (percentualDesconto / 100) * 100) / 100;
+	    double totalComDesconto = total - desconto;
+	    return Math.floor(totalComDesconto * 100) / 100;
 	}
+	
 	public Pedido(double percentualDesconto, ItemPedido[] items)
 	{
 		this.percentualDesconto = percentualDesconto;
