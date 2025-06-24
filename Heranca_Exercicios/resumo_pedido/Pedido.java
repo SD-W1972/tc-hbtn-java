@@ -54,6 +54,5 @@ public class Pedido {
         System.out.println("----------------------------");
         System.out.printf("TOTAL PEDIDO: %.2f%n", totalPedido);
         System.out.println("----------------------------");
-        System.out.println();
     }
 }
