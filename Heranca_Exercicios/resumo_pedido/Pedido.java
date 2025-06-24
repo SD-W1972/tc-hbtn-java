@@ -39,7 +39,7 @@ double totalItem = precoLiquido * quantidade;
 totalProdutos += totalItem;
 
 String tipo = produto instanceof Livro ? "Livro" : "Dvd";
-System.out.printf("Tipo: %s Titulo: %s Preco: %.2f Quant: %d Total: %.2f%n",
+            System.out.printf("Tipo: %s  Titulo: %s  Preco: %.2f  Quant: %d  Total: %.2f%n",
 tipo,
 produto.getTitulo(),
 precoLiquido,
