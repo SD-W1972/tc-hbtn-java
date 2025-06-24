@@ -7,9 +7,7 @@ public class Pedido {
 	  public double calcularTotal() {
 	        double total = 0.0;
 	        for (ItemPedido item : items) {
-	            if (item != null) {
 	                total += item.getProduto().obterPrecoLiquido() * item.getQuantidade();
-	            }
 	        }
 	        return total * (1 - percentualDesconto/100);
 	    }
