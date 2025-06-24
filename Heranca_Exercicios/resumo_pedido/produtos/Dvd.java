@@ -7,7 +7,7 @@ public class Dvd extends produtos.Produto {
 	
 	
 	public double obterPrecoLiquido(){
-		 return precoBruto + (precoBruto * 20 /100);
+		 return duracao + (precoBruto * 20 /100);
 	}
 	
 	public Dvd(String titulo, int ano, String pais, 
