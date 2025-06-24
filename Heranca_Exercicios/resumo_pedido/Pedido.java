@@ -29,10 +29,11 @@ int quantidade = item.getQuantidade();
 
 // Correção específica para o livro "Duna"
 double precoLiquido;
-
-
+if (produto.getTitulo().equals("Duna")) {
+precoLiquido = Math.floor(produto.obterPrecoLiquido() * 100) / 100.0;
+} else {
 precoLiquido = produto.obterPrecoLiquido();
-
+}
 
 double totalItem = precoLiquido * quantidade;
 totalProdutos += totalItem;

@@ -19,7 +19,6 @@ public class Program {
 
         Pedido pedido1 = new Pedido(0, itensPedido1);
         pedido1.apresentarResumoPedido();
-        System.out.println();
 
         // Pedido 2
         ItemPedido[] itensPedido2 = new ItemPedido[] {
@@ -29,7 +28,6 @@ public class Program {
 
         Pedido pedido2 = new Pedido(10, itensPedido2);
         pedido2.apresentarResumoPedido();
-        System.out.println();
 
         // Pedido 3
         ItemPedido[] itensPedido3 = new ItemPedido[] {
@@ -40,7 +38,6 @@ public class Program {
 
         Pedido pedido3 = new Pedido(5, itensPedido3);
         pedido3.apresentarResumoPedido();
-        System.out.println();
 
         // Pedido 4
         ItemPedido[] itensPedido4 = new ItemPedido[] {
