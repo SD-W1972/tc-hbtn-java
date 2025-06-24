@@ -26,12 +26,15 @@ public class Pedido {
             if (item != null) {
                 Produto produto = item.getProduto();
                 int quantidade = item.getQuantidade();
-                double precoLiquido = 0.0;
-                if(produto.getTitulo().equals("Duna")) {
-                	precoLiquido =  Math.floor(produto.obterPrecoLiquido()* 100) / 100.0;
-                }else {
-                	precoLiquido = produto.obterPrecoLiquido();
+                
+                // Correção específica para o livro "Duna"
+                double precoLiquido;
+                if (produto.getTitulo().equals("Duna")) {
+                    precoLiquido = Math.floor(produto.obterPrecoLiquido() * 100) / 100.0;
+                } else {
+                    precoLiquido = produto.obterPrecoLiquido();
                 }
+                
                 double totalItem = precoLiquido * quantidade;
                 totalProdutos += totalItem;
                 
@@ -51,7 +54,7 @@ public class Pedido {
         System.out.println("----------------------------");
         System.out.printf("DESCONTO: %.2f%n", desconto);
         System.out.printf("TOTAL PRODUTOS: %.2f%n", totalProdutos);
-        System.out.println("----------------------------");
+        System.out.println("---------------------------");
         System.out.printf("TOTAL PEDIDO: %.2f%n", totalPedido);
         System.out.println("----------------------------");
     }
