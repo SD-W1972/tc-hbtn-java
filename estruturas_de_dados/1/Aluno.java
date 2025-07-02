@@ -20,7 +20,8 @@ public class Aluno{
         this.idade = idade;
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         return "Aluno{" +
                 "nome='" + nome + '\'' +
                 ", idade=" + idade +
@@ -35,7 +36,7 @@ public class Aluno{
 
     }
 
-    @Override
+
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Aluno aluno = (Aluno) o;
