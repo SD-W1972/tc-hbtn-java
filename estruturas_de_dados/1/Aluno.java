@@ -22,7 +22,10 @@ public class Aluno{
 
     @Override
     public String toString() {
-        return String.format("Aluno{nome='%s', idade=%d}", nome, idade);
+        return "Aluno{" +
+                "nome='" + nome + '\'' +
+                ", idade=" + idade +
+                '}';
     }
 
     public Aluno(String nome, int idade){
