@@ -21,7 +21,7 @@ public class Aluno{
     }
 
     @Override
-    public String toString() {
+    public String toString(){
         return "Aluno{" +
                 "nome='" + nome + '\'' +
                 ", idade=" + idade +
@@ -42,5 +42,5 @@ public class Aluno{
         Aluno aluno = (Aluno) o;
         return idade == aluno.idade && Objects.equals(nome, aluno.nome);
     }
-    
+
 }
