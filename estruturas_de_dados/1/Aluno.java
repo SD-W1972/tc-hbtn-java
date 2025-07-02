@@ -21,11 +21,8 @@ public class Aluno{
     }
 
     @Override
-    public String toString(){
-        return "Aluno{" +
-                "nome='" + nome + '\'' +
-                ", idade=" + idade +
-                '}';
+    public String toString() {
+        return String.format("Aluno{nome='%s', idade=%d}", nome, idade);
     }
 
     public Aluno(String nome, int idade){
