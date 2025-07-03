@@ -5,6 +5,7 @@ public class Program {
         Departamento departamentoEngenharia = new Departamento(1000, 1100);
         Departamento departamentoDocumentacao = new Departamento(1000, 800);
 
+        
         Empregado empregadoEngenharia1 = new Empregado(2300);
         Empregado empregadoEngenharia2 = new Empregado(3650);
         Gerente gerenteEngenharia = new Gerente(5800);
