@@ -29,7 +29,7 @@ public class PessoasArray {
             int mid = (low + high) /2;
             System.out.println("Passando pelo indice: " + mid);
             if(nomes[mid].equals(nome)){
-                System.out.println("Nome " + nome + " foi encontrado na posição " + mid);
+                System.out.println("Nome " + nome + " encontrado na posição " + mid);
                 return;
             } else if(nomes[mid].compareTo(nome) < 0){
                 low = mid + 1;
