@@ -24,7 +24,7 @@ public class PessoasArray {
         System.out.printf("Procurando pelo nome: \"%s\"", nome);
         System.out.println();
             for(int i = 0; i < nomes.length; i++){
-                System.out.println("Passando pelo índice:" + i);
+                System.out.println("Passando pelo indice:" + i);
 
                   if (nomes[i] == nome) {
                       System.out.println("Nome pesquisado é " + nome + " que está na posição " +i);
