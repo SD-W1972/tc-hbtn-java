@@ -31,8 +31,7 @@ public class PessoasArray {
             if(nomes[mid].equals(nome)){
                 System.out.println("Nome " + nome + " foi encontrado na posição " + mid);
                 return;
-            }
-            if(nomes[mid].compareTo(nome) < 0){
+            } else if(nomes[mid].compareTo(nome) < 0){
                 low = mid + 1;
             }else{
                 high = mid - 1;
