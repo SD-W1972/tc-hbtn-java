@@ -25,16 +25,11 @@ public class PessoasArray {
         System.out.println();
             for(int i = 0; i < nomes.length; i++){
                 System.out.println("Passando pelo indice:" + i);
-
                   if (nomes[i] == nome) {
                       System.out.println("Nome pesquisado é " + nome + " que está na posição " +i);
                       encontrado = true;
-                  }
-
-            }
-
-          if(!encontrado){
-                throw new IllegalArgumentException("O nome " + nome + " não se encontra no array de nomes");
+                  }}
+          if(!encontrado){throw new IllegalArgumentException("O nome " + nome + " não se encontra no array de nomes");
 
             }
     }
