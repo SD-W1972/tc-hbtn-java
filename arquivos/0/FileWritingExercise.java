@@ -16,8 +16,8 @@ public class FileWritingExercise {
 
                 String entrada = sc.nextLine();
                 if (entrada.equalsIgnoreCase("sair")) {
-                    System.out.println("Arquivo '" + path + "' foi criado e seu conteúdo foi salvo");
-                    break ;
+                    break;
+
                 }
 
                 bw.write(entrada);
@@ -26,7 +26,7 @@ public class FileWritingExercise {
         } catch (IOException e) {
             System.err.println("Erro ao escrever no arquivo: " + e.getMessage());
         }
-
+        System.out.println("Arquivo '" + path + "' foi criado e seu conteúdo foi salvo");
         sc.close();
     }
 }
