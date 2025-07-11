@@ -1,35 +1,30 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class FileWritingExercise {
-    public static void main(String[] var0) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Digite o nome do arquivo (com extensão .txt): ");
-        String var2 = sc.nextLine();
+        String path = sc.nextLine();
 
-        try (BufferedWriter var3 = new BufferedWriter(new FileWriter(var2))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
             System.out.println("Digita umas coisas maneiras");
 
             while(true) {
-                System.out.print("> ");
-                String var4 = sc.nextLine();
-                if (var4.equalsIgnoreCase("sair")) {
-                    System.out.println("Arquivo '" + var2 + "' foi criado e seu conteúdo foi salvo");
+
+                String entrada = sc.nextLine();
+                if (entrada.equalsIgnoreCase("sair")) {
+                    System.out.println("Arquivo '" + path + "' foi criado e seu conteúdo foi salvo");
                     break ;
                 }
 
-                var3.write(var4);
-                var3.newLine();
+                bw.write(entrada);
+                bw.newLine();
             }
-        } catch (IOException var8) {
-            System.err.println("Erro ao escrever no arquivo: " + var8.getMessage());
+        } catch (IOException e) {
+            System.err.println("Erro ao escrever no arquivo: " + e.getMessage());
         }
 
         sc.close();
