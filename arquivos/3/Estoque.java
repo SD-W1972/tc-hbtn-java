@@ -60,7 +60,7 @@ public class Estoque {
         Produto novoProduto = new Produto(novoId, nome, quantidade, preco);
         produtos.add(novoProduto);
         salvarProdutos();
-        System.out.println("Produto adicionado com sucesso! ID: " + novoId);
+   //     System.out.println("Produto adicionado com sucesso! ID: " + novoId);
     }
 
     public void excluirProduto(int idExcluir) {
@@ -75,7 +75,7 @@ public class Estoque {
         
         if (encontrado) {
             salvarProdutos();
-            System.out.println("Produto com ID " + idExcluir + " foi excluído com sucesso!");
+        //    System.out.println("Produto com ID " + idExcluir + " foi excluído com sucesso!");
         } else {
             System.out.println("Produto com ID " + idExcluir + " não encontrado.");
         }
@@ -85,7 +85,7 @@ public class Estoque {
         if (produtos.isEmpty()) {
             System.out.println("Estoque vazio.");
         } else {
-            System.out.println("Produtos em estoque:");
+        //    System.out.println("Produtos em estoque:");
             for (Produto produto : produtos) {
                 System.out.println(produto.toString());
             }
@@ -104,7 +104,7 @@ public class Estoque {
         
         if (encontrado) {
             salvarProdutos();
-            System.out.println("Quantidade do produto ID " + id + " atualizada para " + novaQuantidade);
+         //   System.out.println("Quantidade do produto ID " + id + " atualizada para " + novaQuantidade);
         } else {
             System.out.println("Produto com ID " + id + " não encontrado.");
         }
