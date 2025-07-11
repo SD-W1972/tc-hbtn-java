@@ -37,5 +37,6 @@ public class CsvFileReader{
         }
 
         System.out.print("Leitura do arquivo concluída.");
+        System.out.println();
     }
 }
