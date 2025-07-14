@@ -1,5 +1,5 @@
 import java.util.*;
-import java.lang.Exception;
+import java.lang.IllegalArgumentException;
 
 public class ListaTodo {
     List<Tarefa> tarefas;
@@ -11,7 +11,7 @@ public class ListaTodo {
     public void adicionarTarefa(Tarefa t) throws Exception{
         for(Tarefa ta : tarefas){
             if(ta.getIdentificador() == t.getIdentificador()){
-                throw new Exception("Tarefa com identificador " + ta.getIdentificador() + " ja existente na lista");
+                throw new IllegalArgumentException("Tarefa com identificador " + ta.getIdentificador() + " ja existente na lista");
             }
         }
         tarefas.add(t);
