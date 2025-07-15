@@ -10,18 +10,18 @@ public class ManipularArrayNumeros  {
         }
     }
 
-    public static void adicionarNumero(List<Integer> lista, int n) throws Exception{
+    public static void adicionarNumero(List<Integer> lista, int n) throws RuntimeException{
         if(buscarPosicaoNumero(lista, n) != -1){
-          throw new Exception("Numero jah contido na lista");
+            throw new RuntimeException("Numero jah contido na lista");
         }else{
             lista.add(n);
         }
 
     }
 
-    public static void removerNumero(List<Integer> lista, int n) throws Exception{
+    public static void removerNumero(List<Integer> lista, int n) throws RuntimeException{
         if(buscarPosicaoNumero(lista, n) == -1){
-            throw new Exception("Numero nao encontrado na lista");
+            throw new RuntimeException("Numero nao encontrado na lista");
         }else{
             int p = buscarPosicaoNumero(lista, n);
             lista.remove(p);
@@ -34,6 +34,6 @@ public class ManipularArrayNumeros  {
             lista.set(p, numeroSubstituto);
         } else{
             lista.add(numeroSubstituto);
-        }  
+        }
     }
 }
