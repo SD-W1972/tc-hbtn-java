@@ -1,7 +1,7 @@
 import java.lang.Exception;
 
 public class Program {
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws Exception  {
         ListaTodo todo = new ListaTodo();
 
         todo.adicionarTarefa(new Tarefa("Ler conteudo aula Lambda", 1));
