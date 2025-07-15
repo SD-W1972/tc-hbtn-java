@@ -10,21 +10,28 @@ public class ManipularArrayNumeros  {
         }
     }
 
-    public static void adicionarNumero(List<Integer> lista, int n) throws RuntimeException{
-        if(buscarPosicaoNumero(lista, n) != -1){
-            throw new RuntimeException("Numero jah contido na lista");
-        }else{
-            lista.add(n);
+    public static void adicionarNumero(List<Integer> lista, int n){
+        try {
+            if(buscarPosicaoNumero(lista, n) != -1){
+                throw new Exception("Numero jah contido na lista");
+            }else{
+                lista.add(n);
+            }
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
         }
-
     }
 
-    public static void removerNumero(List<Integer> lista, int n) throws RuntimeException{
-        if(buscarPosicaoNumero(lista, n) == -1){
-            throw new RuntimeException("Numero nao encontrado na lista");
-        }else{
-            int p = buscarPosicaoNumero(lista, n);
-            lista.remove(p);
+    public static void removerNumero(List<Integer> lista, int n){
+        try {
+            if(buscarPosicaoNumero(lista, n) == -1){
+                throw new Exception("Numero nao encontrado na lista");
+            }else{
+                int p = buscarPosicaoNumero(lista, n);
+                lista.remove(p);
+            }
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
         }
     }
 
