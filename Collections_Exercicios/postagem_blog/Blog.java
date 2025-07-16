@@ -21,7 +21,10 @@ public class Blog{
         for (Post post : lista) {
             autores.add(post.getAutor());
         }
-        return autores;
+        List<Autor> listaAutores = new ArrayList<>(autores);
+        Collections.sort(listaAutores);
+        Set<Autor> setAutores = new TreeSet<>(listaAutores);
+        return setAutores;
     }
 
     public Map<Categorias, Integer> obterContagemPorCategoria(){
