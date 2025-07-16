@@ -1,6 +1,6 @@
 import java.lang.Comparable;
 
-public class Post implements Comparable<Post>{
+public class Post {
     private String autor;
     private String titulo;
     private String corpo;
@@ -23,8 +23,5 @@ public class Post implements Comparable<Post>{
         this.categoria = ca;
     }
 
-    @Override
-    public int compareTo(Post post){
-        return this.autor.compareTo(post.getAutor());
-    }
+ 
 }

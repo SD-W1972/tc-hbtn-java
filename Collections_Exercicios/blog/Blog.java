@@ -4,14 +4,13 @@ public class Blog{
     private List<Post> lista = new ArrayList<>();
 
     public List<Post> getLista(){return this.lista;}
-    
+
     public void adicionarPostagem(Post post){
         lista.add(post);
     }
 
     public Set<String> obterTodosAutores(){
-        Collections.sort(lista);
-        Set<String> autores = new HashSet<>();
+        Set<String> autores = new TreeSet<>();
         for(Post p : lista){
             autores.add(p.getAutor());
         }
