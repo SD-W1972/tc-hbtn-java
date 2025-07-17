@@ -27,12 +27,14 @@ public class Blog{
         return setAutores;
     }
 
-    public Map<Categorias, Integer> obterContagemPorCategoria(){
-       Map<Categorias, Integer> categoriaQuantidade = new EnumMap<>(Categorias.class);
-        for(Post p : lista){
-            categoriaQuantidade.put(p.getCategoria(), categoriaQuantidade.getOrDefault(p.getCategoria(), 0) + 1 );
-       }
-       return categoriaQuantidade;
+
+    public Map<Categorias, Integer> obterContagemPorCategoria() {
+        Map<Categorias, Integer> contagem = new EnumMap<>(Categorias.class);
+        for (Post post : lista) {
+            contagem.put(post.getCategoria(),
+                    contagem.getOrDefault(post.getCategoria(), 0) + 1);
+        }
+        return contagem;
     }
 
     public Set<Post> obterPostsPorAutor(Autor autor){
@@ -51,7 +53,8 @@ public class Blog{
         Set<Post> posts = new TreeSet();
 
         for(Post p : lista){
-            if(p.getCategoria().equals(categoria.toString())){
+
+            if(p.getCategoria() == categoria){
                 posts.add(p);
             }
         }
@@ -70,7 +73,7 @@ public class Blog{
     }
 
     public Map<Autor, Set<Post>> obterTodosPostsPorAutor(){
-        Map<Autor, Set<Post>> map = new HashMap<>();
+        Map<Autor, Set<Post>> map = new TreeMap<>();
  
         for(Post p : lista){
         
