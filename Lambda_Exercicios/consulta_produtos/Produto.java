@@ -5,9 +5,10 @@ public class Produto{
     private int quantidadeEmEstoque;
     private TiposProduto tipo;
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return nome + " " + preco + " " + peso + " " + quantidadeEmEstoque + " " + tipo;
+    @Override
+    public String toString() {
+        return String.format("%s %.6f %.6f %d %s",
+                nome, preco, peso, quantidadeEmEstoque, tipo);
     }
 
     public Produto(String nome, double preco, double peso, int quantidadeEmEstoque, TiposProduto tipo) {
