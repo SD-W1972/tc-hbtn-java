@@ -4,7 +4,7 @@ public class Produto{
     private double preco;
     private int codigo;
 
-    @java.lang.Override
+    @Override
     public java.lang.String toString() {
         return String.format("[%d] %s %s R$ %.2f", codigo, nome, categoria, preco);
     }
