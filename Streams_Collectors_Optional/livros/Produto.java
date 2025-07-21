@@ -6,7 +6,7 @@ public class Produto{
 
     @Override
     public java.lang.String toString() {
-        return String.format("[%d] %s %s R$ %.2f", codigo, nome, categoria, preco);
+        return String.format("[%d] %s %s R$ %.2f", codigo, nome, categoria, preco).replace(".", ",");
     }
 
     public Produto(int codigo, String nome, CategoriaProduto categoria, double preco) {
