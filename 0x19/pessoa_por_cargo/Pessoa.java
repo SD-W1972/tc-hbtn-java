@@ -15,7 +15,7 @@ public class Pessoa{
 
     @Override
     public java.lang.String toString() {
-        return String.format("[%d] %s %s %d RS %.2f", codigo, nome, cargo, idade, salario).replace(".", ",");
+        return String.format("[%d] %s %s %d RS %.6f", codigo, nome, cargo, idade, salario).replace(".", ",");
     }
 
     public int getCodigo() {
