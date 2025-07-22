@@ -11,4 +11,5 @@ public class Consulta{
                 .collect(Collectors.toList());
 
     }
+
 }
