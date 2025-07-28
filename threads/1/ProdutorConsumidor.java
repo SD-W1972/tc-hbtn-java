@@ -1,3 +1,5 @@
+import java.lang.InterruptedException;
+
 public class ProdutorConsumidor {
     public static void main(String[] args) {
         Buffer buffer = new Buffer();
@@ -12,8 +14,12 @@ public class ProdutorConsumidor {
         consumidor.start();
 
 
-            produtor.run();
-            consumidor.run();
+        try{
+            produtor.join();
+            consumidor.join();
+        }catch(InterruptedException e){
+            e.printStackTrace();
+        }
 
 
     }
