@@ -12,7 +12,7 @@ public class Principal{
         t1.run();
 
         t0.start();
-        t1.start();
+
 
         System.out.println("Valor final do contador: " + contador.getContagem());
     }
