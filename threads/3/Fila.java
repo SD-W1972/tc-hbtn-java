@@ -13,7 +13,7 @@ public class Fila{
         notify();
     }
 
-    public synchronized void retirar(){
+    public synchronized void retirar()throws InterruptedException{
         while(lista.size() == 0){
             wait();
         }
