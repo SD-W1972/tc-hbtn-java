@@ -8,7 +8,7 @@ public class Consumidor extends Thread{
     @Override
     public void run(){
         try{
-            this.fila.consumir();
+            this.fila.retirar();
             Thread.sleep(500);
         }catch(InterruptedException e){
             e.printStackTrace();

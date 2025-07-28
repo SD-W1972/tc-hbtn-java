@@ -14,7 +14,7 @@ public class Produtor extends Thread{
     @Override
     public void run(){
         try{
-            fila.produzir(r.nextInt(100));
+            fila.adicionar(random.nextInt(100));
 
         }catch(InterruptedException e){
             e.printStackTrace();
