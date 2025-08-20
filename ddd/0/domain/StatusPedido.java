@@ -1,4 +1,6 @@
 package domain;
 
-public class StatusPedido {
+
+public enum StatusPedido {
+    PENDENTE, PAGO, CANCELADO
 }
