@@ -15,11 +15,15 @@ public class PedidoRepository {
 
 
     public void salvar(Pedido pedido) {
-        // implementar
+        if(pedidos.containsKey(pedido.getId())){
+            System.out.println("Pedido já registrado!");
+        }else{
+            pedidos.put(pedido.getId(), pedido);
+        }
     }
 
 
     public Pedido buscarPorId(String id) {
-        // implementar
+        return pedidos.get(id);
     }
 }
