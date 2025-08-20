@@ -24,18 +24,24 @@ public class PedidoService {
         return new Pedido(cliente);
     }
 
-
     public void adicionarProduto(String pedidoId, Produto produto) {
-        pedidoRepository.buscarPorId(pedidoId).adicionarProduto(produto);
+        Pedido pedido = pedidoRepository.buscarPorId(pedidoId);
+        if (pedido != null) {
+            pedido.adicionarProduto(produto);
+        }
     }
-
 
     public void pagarPedido(String pedidoId) {
-        pedidoRepository.buscarPorId(pedidoId).setStatus(StatusPedido.PAGO);
+        Pedido pedido = pedidoRepository.buscarPorId(pedidoId);
+        if (pedido != null) {
+            pedido.setStatus(StatusPedido.PAGO);
+        }
     }
 
-
     public void cancelarPedido(String pedidoId) {
-        // implementar
+        Pedido pedido = pedidoRepository.buscarPorId(pedidoId);
+        if (pedido != null) {
+            pedido.setStatus(StatusPedido.CANCELADO);
+        }
     }
 }

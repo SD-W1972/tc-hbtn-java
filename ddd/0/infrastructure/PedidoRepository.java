@@ -24,6 +24,10 @@ public class PedidoRepository {
 
 
     public Pedido buscarPorId(String id) {
+        if(pedidos.get(id) == null){
+            System.out.println("Pedido de ID " + id + " não existe!");
+        }
+
         return pedidos.get(id);
     }
 }
