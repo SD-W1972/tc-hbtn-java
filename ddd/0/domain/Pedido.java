@@ -24,22 +24,22 @@ public class Pedido {
 
 
     public void adicionarProduto(Produto produto) {
-        //implementar
+        produtos.add(produto);
     }
 
 
     public void removerProduto(Produto produto) {
-        //implementar
+        produtos.remove(produto);
     }
 
 
     public void pagar() {
-        //implementar
+        status = StatusPedido.PAGO;
     }
 
 
     public void cancelar() {
-        //implementar
+        status = StatusPedido.CANCELADO;
     }
 
 
