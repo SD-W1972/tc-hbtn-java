@@ -15,6 +15,18 @@ public class Pedido {
     private StatusPedido status;
 
 
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
+    }
+
     public Pedido(Cliente cliente) {
         this.id = UUID.randomUUID().toString();
         this.cliente = cliente;
