@@ -1,6 +1,4 @@
-
 @FunctionalInterface
 public interface CriterioFiltro{
-    boolean testar(Produto p);
-
+    public boolean testar(Produto p);
 }

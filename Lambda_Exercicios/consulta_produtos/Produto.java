@@ -5,57 +5,46 @@ public class Produto{
     private int quantidadeEmEstoque;
     private TiposProduto tipo;
 
-    @Override
-    public String toString() {
-        return String.format("%s %.6f %.6f %d %s",
-                nome, preco, peso, quantidadeEmEstoque, tipo);
-    }
-
-    public Produto(String nome, double preco, double peso, int quantidadeEmEstoque, TiposProduto tipo) {
+    public Produto(String nome, double preco, double peso, int quantidadeEmEstoque, TiposProduto tipo){
         this.nome = nome;
-        this.preco = preco;
         this.peso = peso;
+        this.preco = preco;
         this.quantidadeEmEstoque = quantidadeEmEstoque;
         this.tipo = tipo;
     }
 
-    public String getNome() {
-        return nome;
+    @Override
+    public String toString(){
+        return getNome() + " " 
+        + getPreco() + " " 
+        + getPeso() + " "
+        + getQuantidadeEmEstoque() + " "
+        + getTipo() + ".";
     }
 
-    public void setNome(String nome) {
+    public String getNome(){return this.nome;}
+    public double getPreco(){return this.preco;}
+    public double getPeso(){return this.peso;}
+    public int getQuantidadeEmEstoque(){return this.quantidadeEmEstoque;}
+    public TiposProduto getTipo(){return this.tipo;}
+
+    public void setNome(String nome){
         this.nome = nome;
     }
 
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
+    public void setPreco(double preco){
         this.preco = preco;
     }
 
-    public double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(double peso) {
+    public void setPeso(double peso){
         this.peso = peso;
     }
 
-    public int getQuantidadeEmEstoque() {
-        return quantidadeEmEstoque;
-    }
-
-    public void setQuantidadeEmEstoque(int quantidadeEmEstoque) {
+    public void setQuantidadeEmEstoque(int quantidadeEmEstoque){
         this.quantidadeEmEstoque = quantidadeEmEstoque;
     }
 
-    public TiposProduto getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TiposProduto tipo) {
+    public void setTipo(TiposProduto tipo){
         this.tipo = tipo;
     }
 }

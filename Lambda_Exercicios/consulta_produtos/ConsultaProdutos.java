@@ -1,16 +1,10 @@
 import java.util.List;
-import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class ConsultaProdutos{
-    public static List<Produto> filtrar(List<Produto> produtos, CriterioFiltro criterioFiltro){
-        List<Produto> produtosFiltrados = new ArrayList<>();
-
-        for(Produto p : produtos){
-            if(criterioFiltro.testar(p)){
-                produtosFiltrados.add(p);
-            }
-        }
-
-        return produtosFiltrados;
+    public static List<Produto> filtrar(List<Produto> listaProdutos, CriterioFiltro criterioFiltro){
+        return listaProdutos.stream().
+        filter(criterioFiltro::testar)
+        .collect(Collectors.toList());
     }
 }
