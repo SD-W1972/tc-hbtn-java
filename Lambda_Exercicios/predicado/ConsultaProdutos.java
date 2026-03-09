@@ -8,8 +8,8 @@ public class ConsultaProdutos{
         List<Produto> produtosFiltrados = new ArrayList<>();
 
         produtosFiltrados.addAll(produtos);
-        return produtosFiltrados.stream()
-        .filter(testar)
+        return produtosFiltrados.stream().
+        filter(testar)
         .collect(Collectors.toList());
     }
 }
