@@ -1,6 +1,3 @@
-import java.lang.Comparable;
-import java.lang.Override;
-
 public class Pessoa implements Comparable<Pessoa>{
     private int codigo;
     private String nome;
@@ -8,11 +5,8 @@ public class Pessoa implements Comparable<Pessoa>{
     private int idade;
     private double salario;
 
-    @Override
-    public int compareTo(Pessoa outraPessoa){
-        return this.nome.compareTo(outraPessoa.getNome());
-    }
-    public Pessoa(int codigo, String nome, String cargo, int idade, double salario) {
+    public Pessoa(int codigo, String nome, String cargo,
+    int idade, double salario){
         this.codigo = codigo;
         this.nome = nome;
         this.cargo = cargo;
@@ -20,48 +14,42 @@ public class Pessoa implements Comparable<Pessoa>{
         this.salario = salario;
     }
 
-    @Override
-    public java.lang.String toString() {
-        return String.format("[%d] %s %s %d R$ %.6f", codigo, nome, cargo, idade, salario).replace(".", ",");
-    }
+    public int getCodigo(){return this.codigo;}
+    public String getNome(){return this.nome;}
+    public String getCargo(){return this.cargo;}
+    public int getIdade(){return this.idade;}
+    public double getSalario(){return this.salario;}
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
+    public void setCodigo(int codigo){
         this.codigo = codigo;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
+    public void setNome(String nome){
         this.nome = nome;
     }
 
-    public String getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(String cargo) {
+    public void setCargo(String cargo){
         this.cargo = cargo;
     }
 
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
+    public void setIdade(int idade){
         this.idade = idade;
     }
 
-    public double getSalario() {
-        return salario;
+    public void setSalario(double salario){
+        this.salario = salario;
     }
 
-    public void setSalario(double salario) {
-        this.salario = salario;
+    @Override
+    public int compareTo(Pessoa other){
+        return Integer.compare(this.codigo, other.codigo);
+    }
+
+    @Override
+    public String toString(){
+        return this.codigo + " "
+        + this.nome + " "
+        + this.idade + " R$ "
+        + this.salario;
     }
 }

@@ -1,18 +1,16 @@
-import java.util.List;
-import java.util.TreeMap;
-import java.util.stream.Collectors;
-import java.util.TreeSet;
-import java.util.Collections;
+import java.util.*;
+import java.util.stream.*;
 
 public class ConsultaPessoas{
     public static TreeMap<String, TreeSet<Pessoa>> obterPessoasAgrupadasPorCargoEmOrdemReversa(List<Pessoa> pessoas){
-        TreeMap<String, TreeSet<Pessoa>> pessoTree = pessoas.stream()
-                .collect(Collectors.groupingBy(
-                        Pessoa::getCargo,
-                        () -> new TreeMap<>(Collections.reverseOrder()),
-                        Collectors.toCollection(TreeSet::new)
-                ));
-        return pessoTree;
+       TreeMap<String, TreeSet<Pessoa>> pessoasAgrupadasPorCargoEmOrdemReversa =
+        pessoas.stream()
+        .collect(Collectors.groupingBy(
+            Pessoa::getCargo,
+            () -> new TreeMap<>(Collections.reverseOrder()),
+            Collectors.toCollection(TreeSet::new)
+        ));
+        
+        return pessoasAgrupadasPorCargoEmOrdemReversa;
     }
-
 }
