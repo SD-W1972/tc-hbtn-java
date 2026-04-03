@@ -23,12 +23,13 @@ public class VerificacaoLogin {
 
 
     public static void realizarLogin(String usuario, String senha, String usuarioCorreto, String senhaCorreta) {
-        // implemente aqui o log
-        logger.info("Aplicação iniciada");
-        logger.info("Tentativa de login com o usuário: " + usuarioCorreto);
-        logger.info("Login bem-sucedido para o usuário: " + usuarioCorreto);
-        logger.info("Tentativa de login com o usuário: " + usuarioCorreto);
-        logger.error("Senha incorreta para o usuário: " + usuarioCorreto);
-        logger.warn("Usário usuarioDesconhecido não encontrado!");
+        logger.info("Tentativa de login com o usuario: " + usuario);
+        if(usuario == usuarioCorreto && senha == senhaCorreta){
+            logger.info("Tentativa de login bem-sucedida para o usuario: " + usuario);
+        }else if(usuario == usuarioCorreto && senha != senhaCorreta){
+            logger.error("Senha incorreta para o usuario: " + usuario);
+        }else{
+            logger.warn("Usuario " + usuario + " nao encontrado!");
+        }
     }
 }
