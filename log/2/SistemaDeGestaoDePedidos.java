@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.lang.String.format;
+
 
 public class SistemaDeGestaoDePedidos {
 
@@ -44,44 +46,39 @@ public class SistemaDeGestaoDePedidos {
 
     // Função para criar um pedido
     private static void criarPedido(int id, String nomeProduto, double valor) {
-            if(pedidos.containsKey(id)){
-                logger.warn("Pedido com ID " + id + " já cadastrado no sistema!");
-            }else{
-                pedidos.put(id, new Pedido(id, nomeProduto, valor));
-                logger.info("Pedido ID " + id + " " + nomeProduto + " criado com sucesso!");
-                logger.info("Criando pedido: ID = " + id + " - Produto = " + nomeProduto + " - Valor = " + valor);
-            }
-
-
+      if(pedidos.containsKey(id)){
+          logger.warn(format("Pedido com ID %d ja existente no sistema!", id));
+          return;
+      }
+      pedidos.put(id, new Pedido(id, nomeProduto, valor));
     }
 
 
     // Função para pagar um pedido
     private static void pagarPedido(int id, double valorPago) {
-        logger.info("Processando pagamento do pedido ID " + id + " - Valor pago = " + valorPago);
-        if(pedidos.get(id).isPago()){
-            logger.warn("Pedido já está pago");
-        }else if(pedidos.get(id).getValor() != valorPago){
-            logger.error("Erro ao pagar: Valor pago " + valorPago + " é diferente do valor do pedido " + pedidos.get(id).getValor() +
-                    "para o pedido ID " + id + "." );
-        }else{
-            pedidos.get(id).setPago(true);
-            logger.info("Pagamento do pedido ID " + id + " realizado com sucesso!");
+        Pedido p = pedidos.get(id);
+        if(p == null){
+            logger.warn(format("Erro ao pagar: Pedido ID %d nao existente no sistema", id));
+            return;
         }
 
+        if(p.getValor() != valorPago){
+            logger.error(format("Erro ao pagar: Valor pago %.2f eh diferente do valor do pedido %.2f para o pedido ID %d", valorPago, p.getValor(), id));
+        }else{
+            logger.info(format("Pagamento do pedido ID %d efetuado com sucesso", id));
+            p.setPago(true);
+        }
     }
+
 
     // Função para cancelar um pedido
     private static void cancelarPedido(int id) {
-        logger.info("Processando cancelamento do pedido ID " + id);
-
         if(!pedidos.containsKey(id)){
-            logger.error("Erro ao cancelar: Pedido ID " + id + " não encontrado.");
+            logger.error(format("Erro ao cancelar: Pedido ID %d nao encontrado.", id));
         }else if(pedidos.get(id).isPago()){
-            logger.warn("Não é possível cancelar o pedido ID " + id + " pois já foi pago.");
+            logger.warn(format("Nao eh possivel cancelar o pedido ID %d pois ja foi pago", id));
         }else{
             pedidos.remove(id);
-            logger.info("Pedido de ID " + id + " cancelado com sucesso");
         }
     }
 }
